@@ -1,0 +1,7 @@
+aad48741b7c2f7ffb63944e35cea76d8 *DESCRIPTION
+c6c382dd4819230b34928454be94a6f4 *NAMESPACE
+e79e91b67aedcaccff6d7827cfc13efb *R/Socrata.r
+1667121f691342b0834181a07c8b03f7 *man/getListedDatasets.Rd
+3ccf63b3c70a256323963d22363c7d95 *man/getSocrataData.Rd
+9bed16cc74d6f45702e079fead687902 *man/nextSocrataPage.Rd
+33916654953debf668bc6a924b07bc26 *man/search.Socrata.Rd

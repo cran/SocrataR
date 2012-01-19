@@ -5,13 +5,13 @@ nextSocrataPage retrieves the next page from the current search.
 
 nextSocrataPage retrieves the html source page for the next page.}
 \usage{
-  nextSocrataPage(search.Socrata.Call, page = NULL)
+  nextSocrataPage(search.Socrata.Call, Page = NULL)
 }
 \arguments{
   \item{search.Socrata.Call}{The URL call of the last html
   page retrieval.}
 
-  \item{page}{The page number to retrieve. If not entered
+  \item{Page}{The page number to retrieve. If not entered
   it will use next page.}
 }
 \description{

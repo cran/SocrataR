@@ -27,7 +27,7 @@ getListedDatasets(socrata.html)
 
 ## Not run
 ## Retrieve datasets related to airplane
-socrata.html <- search.Socrata(topic= 'airplane')
+socrata.html <- search.Socrata(topic = 'airplane')
 getListedDatasets(socrata.html)
 }
 

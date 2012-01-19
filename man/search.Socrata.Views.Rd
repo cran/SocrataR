@@ -1,24 +1,31 @@
-\name{search.Socrata}
-\alias{search.Socrata}
-\title{search.Socrata
-search.Socrata is an interface function to search and retrieve a listing of the datasets available on http://opendata.socrata.com/.
+\name{search.Socrata.Views}
+\alias{search.Socrata.Views}
+\title{search.Socrata.Views
+search.Socrata.Views is an interface function to search and retrieve a listing of the datasets available on https://opendata.socrata.com/api/.
 
-search.Socrata returns a html page and uses the RCurl get method to retrieve the page.}
+search.Socrata.Views returns either an xml page with type = xml or a dataframe with type = json. and uses the RCurl get method to retrieve the page.}
 \usage{
-  search.Socrata(search = NULL, topic = NULL, Limit = NULL,
-    Category = NULL, page = 1, sortby = NULL,
-    sortPeriod = "week")
+  search.Socrata.Views(search = NULL, topic = NULL,
+    name = NULL, tags = NULL, category = NULL,
+    count = FALSE, limit = 10, page = 1, type = "json")
 }
 \arguments{
   \item{search}{Any search term can be entered. All data
-  sets that have this term will be returned}
+  sets that have this term in their metadata or contend
+  will be returned.}
 
-  \item{topic}{Lists data sets that are related to the
-  topic. Possible topics are: air, epa, filter, government,
-  water, 2.0, 2009, air, aircraft, airplane, all+deals,
-  apps, archaeology, art, asb, automatic+revocations,
-  aviation, bfads, blackfriday, blog, book, books, bp,
-  budget, business, calories, campaign, campaign+finance,
+  \item{topic}{Lists views containing this text in their
+  description}
+
+  \item{name}{Lists views containing this text in their
+  name}
+
+  \item{tags}{Lists data sets that are related to the tags
+  Possible tags are: air, epa, filter, government, water,
+  2.0, 2009, air, aircraft, airplane, all+deals, apps,
+  archaeology, art, asb, automatic+revocations, aviation,
+  bfads, blackfriday, blog, book, books, bp, budget,
+  business, calories, campaign, campaign+finance,
   cannon+land, cartridge, census,
   chronicle+of+philanthropy, church, city, community,
   congress, contacts, cooking, county, crash, dail, data,
@@ -54,41 +61,34 @@ search.Socrata returns a html page and uses the RCurl get method to retrieve the
   white+house, white+house+staff, whitehouse, wildlife,
   wine, work, world,}
 
-  \item{Limit}{Limits the results to datasets of the types.
-  Possible limits are: datasets, blob, charts, calendars,
-  href, filters, maps, forms}
-
-  \item{Category}{Lists all datasets within the category.
+  \item{category}{Lists all datasets within the category.
   Category limits are: Business, Fun, Personal, Education,
   Government}
 
+  \item{count}{Boolean. If count is true then it returns
+  the total number of rows, and ignores the limit
+  parameter}
+
+  \item{limit}{Limits the total number of results to
+  return, max 200.}
+
   \item{page}{The page to be retrieved.}
 
-  \item{sortby}{Datasets can be returned in a sorted order.
-  Possible values are alphabetical, most relevant, most
-  accessed, newest, highest rating, most comments, oldest.}
-
-  \item{sortPeriod}{Period over which the most accessed are
-  determined. Only revelant when sortby = 'most accessed'}
+  \item{type}{The type of response format. Supports json
+  and xml.}
 }
 \description{
-  search.Socrata search.Socrata is an interface function to
-  search and retrieve a listing of the datasets available
-  on http://opendata.socrata.com/.
+  search.Socrata.Views search.Socrata.Views is an interface
+  function to search and retrieve a listing of the datasets
+  available on https://opendata.socrata.com/api/.
 
-  search.Socrata returns a html page and uses the RCurl get
-  method to retrieve the page.
+  search.Socrata.Views returns either an xml page with type
+  = xml or a dataframe with type = json. and uses the RCurl
+  get method to retrieve the page.
 }
 \examples{
 ## Not run
-## Retrieve basic page
-socrata.html <- search.Socrata()
-getListedDatasets(socrata.html)
-
-
-## Not run
 ## Retrieve datasets related to airplane
-socrata.html <- search.Socrata(topic = 'airplane')
-getListedDatasets(socrata.html)
+\dontrun{socrata.views <- search.Socrata.Views(topic = 'airplane')}
 }
 

@@ -41,7 +41,7 @@ getSocrataData(1, data, file = NULL)
 
 ## Not run
 ## Retrieve datasets related to airplane
-socrata.html <- search.Socrata(topic= 'airplane')
+socrata.html <- search.Socrata(topic = 'airplane')
 data <- getListedDatasets(socrata.html)
 getSocrataData(8, data, file = NULL)
 }
